@@ -1,0 +1,21 @@
+<div class="sidebar-v">
+    <ul>
+        <li ng-class="getClass('/dashboard')" ><a href="#dashboard"><i class="material-icons">&#xE871;</i></a></li>
+        <li ng-class="getClass('/deploy')"><a href="#deploy"><span class="icon-Deploy"></span></a></li>
+        <li ng-class="getClass('/instances')"><a href="#instances"><span class="icon-instances"></span></a></li>
+        <li ng-class="getClass('/users')"><a href="#users"><i class="material-icons">&#xE7EF;</i></a></li>
+        <li ng-class="getClass('/settings')"><a href="#settings"><i class="material-icons">&#xE8B8;</i></a></li>
+    </ul>
+    <i class="material-icons toggle-btn" data-toggle="tooltip" data-placement="right" title="Show menu" ng-click="showHideMenu()" tooltip>&#xE315;</i>
+</div>
+
+<div class="sidebar-h">
+    <ul>
+        <li ng-class="getClass('/dashboard')" ><a href="#dashboard"><i class="material-icons">&#xE871;</i>Dashboard</a></li>
+        <li ng-class="getClass('/deploy')"><a href="#deploy"><span class="icon-Deploy"></span>Deploy</a></li>
+        <li ng-class="getClass('/instances')"><a href="#instances"><span class="icon-instances"></span>Instances</a></li>
+        <li ng-class="getClass('/users')"><a href="#users"><i class="material-icons">&#xE7EF;</i></i>Users</a></li>
+        <li  ng-class="getClass('/settings')"><a href="#settings"><i class="material-icons">&#xE8B8;</i>Settings</a></li>
+    </ul>
+    <i class="material-icons toggle-btn" data-toggle="tooltip" data-placement="left" title="Hide menu" ng-click="showHideMenu()" tooltip>&#xE314;</i>
+</div>
