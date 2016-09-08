@@ -7,33 +7,30 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Sentinel;
 use App\Http\Requests\AdminSignIn;
+use Illuminate\Http\Response;
 
 class AuthContrloller extends Controller
 {
-    public function login()
-    {
-        return view('auth.login');
-    }
-
-    public function loginPost(AdminSignIn $request){
+    public function authenticate(AdminSignIn $request){
         $input = $request->only('email', 'password');
         try {
-            if (Sentinel::authenticate($input, $request->has('remember'))) {
+            if (Sentinel::authenticate($input, false)) {
                 $id = User::where('email', $input['email'])->first();
                 $user = Sentinel::findById($id->id);
-                Sentinel::login($user);
-                return redirect()->intended('dashboard');
+                $token = \JWTAuth::fromUser($user);
+                return response()->json(compact('token'));
+                
             }
-            return redirect()->back()->withInput()->withErrorMessage('Invalid credentials provided');
+            return response()->json(['message'=>'Invalid credentials provided']);
         } catch (\Cartalyst\Sentinel\Checkpoints\NotActivatedException $e) {
-            return redirect()->back()->withInput()->withErrorMessage('User Not Activated.');
+            return response()->json(['message'=>'User Not Activated']);
         } catch (\Cartalyst\Sentinel\Checkpoints\ThrottlingException $e) {
-            return redirect()->back()->withInput()->withErrorMessage($e->getMessage());
+            return response()->json(['message'=>$e->getMessage()]);
         }
     }
 
-    public function logout() {
-        Sentinel::logout();
-        return redirect()->intended('/');
+    public function test() {
+
+        return 'tttttt';
     }
 }

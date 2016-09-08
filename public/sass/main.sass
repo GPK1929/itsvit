@@ -803,3 +803,103 @@ input[type="checkbox"]:checked + label span
 	background:url("../img/checkbox.png") -21px top no-repeat
 
 /* 
+
+/* login page*/
+.login-wrap
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	background-color: $main-color
+	z-index: 9999
+	-moz-transition: all 2s ease-in-out;
+	-o-transition: all 2s ease-in-out;
+	-webkit-transition: all 2s ease-in-out;
+	&.active
+		-webkit-transform: translate(0,-9999px)
+		-moz-transform: translate(0,-9999px)
+		-o-transform: translate(0,-9999px)
+		top: -9999px
+		opacity: .7
+	form 
+		width: 60%
+		margin: 0 auto
+		margin-top: 80px
+		input 
+			background-color: transparent
+			border: none
+			border-bottom: 1px solid #fff
+			border-radius: 0
+			margin-bottom: 15px
+			outline: none
+			color: #fff
+		.btn
+			width: 100%
+			margin-top: 40px
+.login-wrap input::-webkit-input-placeholder 
+	font-size: 18px
+	font-weight: 100
+	letter-spacing: -1px
+	color: #fff
+.login-wrap input:-moz-placeholder
+	font-size: 18px
+	font-weight: 100
+	letter-spacing: -1px
+	color: #fff
+.login-wrap input::-moz-placeholder
+	font-size: 18px
+	font-weight: 100
+	letter-spacing: -1px
+	color: #fff
+
+.login-wrap input:focus:required:invalid,
+	color: #dc4e41
+
+.login-wrap input:required:valid
+	color: #fff
+
+.login-form
+	width: 500px
+	height: 510px
+	text-align: center
+	margin: 0 auto
+	position: absolute
+	top: 50%
+	left: 50%
+	margin: -330px 0 0 -250px
+	h1 
+		text-transform: uppercase
+		color: #fff
+		font-size: 60px
+		font-weight: 500
+		margin-bottom: 0
+	p 
+		color: #fff
+		font-size: 27px
+
+.login-img
+	width: 120px
+	margin: 0 auto
+	img 
+		width: 100%
+		display: block
+
+
+
+
+//404 page
+
+.page-not-found
+	text-align: center
+	p
+		font-size: 21px
+		font-weight: 300
+	h4
+		font-size: 282px
+		font-weight: 100
+		color: #bcbcbc
+	a 
+		font-size: 24px
+		img 
+			margin-right: 5px

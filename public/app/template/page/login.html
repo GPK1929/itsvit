@@ -1,0 +1,15 @@
+<div class="login-wrap">
+    <div class="login-form">
+        <div class="login-img">
+            <img src="img/logo-main.svg" alt="Spaceport">
+        </div>
+        <h1>Spaceport</h1>
+        <p>Professional Web</p>
+        <form >
+            <input type="text" ng-model="form1.email" placeholder="Email" required/>
+            <input type="password" ng-model="form1.password" placeholder="Password" required/>
+            <a ng-click="myFunction(form1)" >Login</a>
+        </form>
+        <p>{{ error_data }}</p>
+    </div>
+</div>

@@ -11,21 +11,3 @@
 |
 */
 
-Route::group(['middleware' => ['guest']], function () {
-    Route::get('/', [
-        'uses' => 'AuthContrloller@login'
-    ]);
-
-    Route::post('/', [
-        'uses' => 'AuthContrloller@loginPost'
-    ]);
-});
-
-
-Route::group( ['middleware' => ['auth']], function () {
-    
-    Route::get('admin', [
-        'uses' => 'AdminPanelController@index'
-    ]); 
-    
-});

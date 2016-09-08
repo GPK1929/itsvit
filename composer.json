@@ -9,7 +9,9 @@
         "laravel/framework": "5.3.*",
         "predis/predis": "^1.1",
         "cartalyst/sentinel": "2.0.*",
-        "graham-campbell/github": "^4.2"
+        "graham-campbell/github": "^4.2",
+        "dingo/api": "1.0.*@dev",
+        "tymon/jwt-auth": "0.5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

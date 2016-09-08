@@ -1,7 +1,11 @@
 angular.module('spaceportApp').controller('DeployController', [
     '$scope',
     '$http',
-    function($scope, $http){
+    '$location',
+    function($scope, $http, $location){
         document.title = 'Spaceport | Deploy';
+
+       
+
     }
 ]);

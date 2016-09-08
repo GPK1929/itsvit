@@ -1,20 +1,24 @@
 angular.module('spaceportApp').controller('DashboardController', [
     '$scope',
     '$http',
-    function($scope, $http){
+    '$route',
+    '$cookies',
+    function($scope, $http, $cookies){
         document.title = 'Spaceport | Dashboard';
-        
+        console.log('cookies',$cookies);
         $http({
             method : "GET",
-            url : "app/json/dashboard.js"
+            url : "test"
         })
         .then(function pageSucces(response) {
             console.log(response.data);
         }, function(response) {
         //Second function handles error
+            console.log('Something went wrong');
             $scope.content = "Something went wrong";
-            console,log($scope.content);
+
         });
+
     }    
     
 ]);

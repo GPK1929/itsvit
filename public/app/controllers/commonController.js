@@ -6,7 +6,6 @@ angular.module('spaceportApp').controller('CommonController', [
         $scope.sidebarMenuPath ='app/template/layout/sidebar_menu.html';
         // add class to <li> for active page
         $scope.getClass = function (path) {
-            console.log($location.path().substr(0, path.length));
             return ($location.path().substr(0, path.length) === path) ? 'active' : '';
         }
         // show/hide menu

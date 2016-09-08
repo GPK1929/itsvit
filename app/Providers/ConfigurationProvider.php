@@ -5,26 +5,29 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Http\ConfigParameters\ParametersList;
 
-class AppServiceProvider extends ServiceProvider
+class ConfigurationProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Bootstrap the application services.
      *
      * @return void
      */
+    
+
     public function boot()
     {
-        $parameters = new ParametersList;
-        \Config::set('github.connections.main.token', $parameters->gittoken);
+        //
     }
 
     /**
-     * Register any application services.
+     * Register the application services.
      *
      * @return void
      */
     public function register()
     {
-        //
+        $this->app->bind('App\Http\ConfigParameters\ParametersList', function(){
+            return new ParametersList();
+        });
     }
 }

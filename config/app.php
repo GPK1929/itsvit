@@ -51,7 +51,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://spaceport.zz'),
 
     /*
     |--------------------------------------------------------------------------
@@ -162,24 +162,18 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-        /*
-         * Package Service Providers...
-         */
-
-        //
-
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         GrahamCampbell\GitHub\GitHubServiceProvider::class,
+        Dingo\Api\Provider\LaravelServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
     ],
 
     /*
@@ -230,7 +224,9 @@ return [
         'Reminder'   => Cartalyst\Sentinel\Laravel\Facades\Reminder::class,
         'Sentinel'   => Cartalyst\Sentinel\Laravel\Facades\Sentinel::class,
         'GitHub' => GrahamCampbell\GitHub\Facades\GitHub::class,
-
+        'APIRoute'  => Dingo\Api\Facade\Route::class,
+        'API'       => Dingo\Api\Facade\API::class,
+        'JWTAuth'   => Tymon\JWTAuth\Facades\JWTAuth::class,
     ],
 
 ];

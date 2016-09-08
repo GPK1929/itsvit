@@ -1,16 +1,16 @@
 $(document).ready(function() {
-	$('.toggle-btn').click(function(){
-		alert('fsdfdsfsd');
 
-		// $(".sidebar-h, .main-wrapp, .crumb-wrap").toggleClass("active");
-		// if ($('.sidebar-h').hasClass('active')) {
-		// 	$('.sidebar-v').css('opacity', '0')
-		// } else {
-		// 	$('.sidebar-v').css({'opacity': '1', 'transition': 'all .9s ease'})
-		// }
+//button
+	$('.toggle-btn').click(function(){
+		$(".sidebar-h, .main-wrapp, .crumb-wrap").toggleClass("active");
+		if ($('.sidebar-h').hasClass('active')) {
+			$('.sidebar-v').css('opacity', '0')
+		} else {
+			$('.sidebar-v').css({'opacity': '1', 'transition': 'all .9s ease'})
+		}
 	});
 
-	
+	//tooltip
 	$('[data-toggle="tooltip"]').tooltip();
 
 	// popup on page instance
@@ -46,6 +46,11 @@ $(document).ready(function() {
       });
 	  }
 	});
+
+	$('.login-wrap button').click(function(){
+  	$(".login-wrap").addClass("active");
+	});
+
 
 
 

@@ -25,7 +25,6 @@ class AdminSignIn extends FormRequest
         return [
             'email' => 'required',
             'password' => 'required',
-            '_token' => 'required'
         ];
     }
 }
