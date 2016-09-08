@@ -8,7 +8,7 @@ angular.module('spaceportApp').controller('DashboardController', [
         console.log('cookies',$cookies);
         $http({
             method : "GET",
-            url : "test"
+            url : "api/branches"
         })
         .then(function pageSucces(response) {
             console.log(response.data);

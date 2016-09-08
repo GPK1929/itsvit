@@ -21,12 +21,22 @@ $api = app('Dingo\Api\Routing\Router');
 $api->version('v1', function ($api) {
 
     $api->group( ['middleware' => ['guest']], function ($api) {
+
         $api->post('authenticate', 'App\Http\Controllers\AuthContrloller@authenticate');
     });
 
-    $api->group( ['middleware' => ['jwt.auth']], function ($api) {
+    $api->group( ['middleware' => ['jwt.auth'], 'prefix' => 'api'], function ($api) {
+
         $api->get('test', 'App\Http\Controllers\AuthContrloller@test');
+
+        /**
+         * GitHub Route
+         */
+        $api->get('branches', 'App\Http\Controllers\Api\GitController@listBranches');
+
     });
+
+
 
 });
 
